@@ -1,0 +1,45 @@
+﻿
+@model List<Super>
+
+<table class="table table-bordered shadow table-hover table-info">
+    <tr class="d-table-row">
+        <th>Name</th>
+        <th>SuperName</th>
+        <th>Power</th>
+        <th>PowerLevel</th>
+        <th>Cape</th>
+        <th>Good or Bad?</th>
+        <th>Delete Super</th>
+    </tr>
+    @foreach (Super super in Model)
+    {
+<tr class="d-table-row">
+    <td>@super.Name</td>
+    <td>@super.SuperName</td>
+    <td>@super.Power</td>
+    <td>@super.PowerLevel</td>
+    @if (super.Cape == true)
+    {
+        <td>Wears a cape! Deathtrap.</td>
+    }
+    else
+    {
+        <td>Does not wear a cape.  Smart.</td>
+    }
+    @if (super.Good == true)
+    {
+        <td>Good guy!</td>
+    }
+    else
+    {
+        <td>Bad guy!</td>
+    }
+    <td class="btn-outline-warning">
+        <a href="../Supers/DeleteSuper?id=@super.Id">Delete this Super</a>    @*?=what we're sending     id="primary id"*@
+    </td>
+</tr>
+}
+
+</table>
+
+<a href="../Supers/AddSuper" class="btn-outline-info">Add a new super!</a>

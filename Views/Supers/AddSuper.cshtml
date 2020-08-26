@@ -1,0 +1,18 @@
+﻿
+<form action="../Super/AddSuper" method="post">
+    <input type="text" name="Name" placeholder="Name" class="form-control mb-4" />
+    <input type="text" name="SuperName" placeholder="Super Name" class="form-control mb-4" />
+    <input type="text" name="Power" placeholder="Super Power" class="form-control mb-4" />
+    <input type="number" name="PowerLevel" min="0" max="100" placeholder="Power Level" class="form-control mb-4" />
+    
+    <div class="form-control mb-4">
+        Cape? <input type="checkbox" name="Cape" value="true" />
+        <input type="checkbox" name="Cape" value="false" hidden />
+    </div>
+    <div class="form-control mb-4">
+        Good? <input type="checkbox" name="Good" value="true" />
+        <input type="checkbox" name="Good" value="false" hidden />
+    </div>
+    
+    <input type="submit" value="Add this super!" class="form-control mb-4" />
+</form>

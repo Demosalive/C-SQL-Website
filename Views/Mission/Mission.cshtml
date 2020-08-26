@@ -1,0 +1,35 @@
+﻿@model List<Mission>
+
+<table class="table table-bordered shadow table-hover table-info">
+    <tr class="d-table-row">
+        <th>MissionName</th>
+        <th>Difficulty</th>
+        <th>DueDate</th>
+        <th>Completion Status</th>
+        <th>Delete Mission</th>
+        
+    </tr>
+    @foreach (Mission mission in Model)
+    {
+        <tr class="d-table-row">
+            <td>@mission.MissionName</td>
+            <td>@mission.Difficulty</td>
+            <td>@mission.DueDate</td>
+            @if (mission.Completed == true)
+            {
+                <td>Mission Complete</td>
+            }
+            else
+            {
+                <td>Mission Incomplete</td>
+            }
+           
+            <td class="btn-outline-warning">
+                <a href="../Mission/DeleteMission?id=@mission.Id">Delete this Mission</a>    @*?=what we're sending     id="primary id"*@
+            </td>
+        </tr>
+    }
+
+</table>
+
+<a href="../Mission/AddMission" class="btn-outline-info">Add a new Mission!</a>
